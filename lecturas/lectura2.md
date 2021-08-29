@@ -1,0 +1,17 @@
+# Matrix Factorization Techniques for Recommender Systems
+
+<div style:"text-align: justify">
+En el presente *paper* se plantea que existen diferentes tipos de sistemas recomendadores, tales como *Content Filtering*, *Collaborative Filtering (CF)* y *Latent Factor Models*, el cual consiste en caracterizar tanto al usuario como al *item* en un espacio de `n` factores inferidos a partir de los patrones presentes en los *ratings*. En particular, este *paper* se concentra en explicar un método de este sistema recomendadr que es la factorización matricial.
+</div>
+
+<div style:"text-align: justify">
+La factorización matricial consiste en tener una matriz de *users-items* que permite obtener patrones a partir de los *ratings* y así encontrar estos factores latentes. Una vez que se tienen los factores latentes, queda representar tanto al *user* como al *item* en este espacio, y una vez que se consigue esto es que se puede calcular el producto punto para obtener la predicción de *rating* que dicho usuario le daría a ese *item* en particular. El problema con esta matriz de *üsers-items* es que gran parte de esta no tiene datos, por lo que un *approach* es aprender los vectores que representen tanto al *user* como al *item* y minimizar el error de estos vectores en el *set* de *training*, es decir, de los *ratings* conocidos. Para lograr esto, el *paper* menciona que los algoritmos de aprendizaje pueden ser *Stochastic Gradient Descent (SGD)* o *Alternating Least Squares (ALS)*.
+</div>
+
+<div style:"text-align: justify">
+La factorización matricial es un tipo de sistema recomendador más robusto que *CF* pues tiene consideraciones para distintas circunstancias, como lo es que en un tiempo determinado un *item* sea mejor o pero clasificado (*rating*) debido a factores externos, o el tipo de confianza que existe respecto a determinados *ratings*, así como también las tendencias que tiene un usuario de siempre calificar películas de este estilo en este rango, entre otras.
+</div>
+
+<div style:"text-align: justify">
+Quiénes redactan el *paper* son el grupo que consiguió el mejor porcentaje de avance en el *Netflix Prize*, por lo que su algoritmo de factorización matricial es brillante y excelente, no hay duda de eso, sin embargo, es importante mencionar y ellos lo hacen pero de manera muy breve, es el tiempo y la eficiencia de ejcución del algoritmo. Es claro que la matriz de *users-items* no está completa y manejar dicha cantidad de datos de manera eficiente es muy complicado, y qué decir de realizar cálculos sobre ellos, y es aquí dónde mencionan que calcular los vectores de *item* y *user* es lo más complicado explicando que en los algoritmos de aprendizaje deben iterar sobre todo el *set* de *training* lo que para efectos prácticos es casi ridículo. Creo que mencionar un poco más de la complejidad del algoritmo, tiempos de ejecución e ideas acerca de cómo solucionar dichos problemas hubiera sido de gran ayuda, porque claro está que funciona y grandes empresas como Netflix están dispuestas a ejecutar el algoritmo y ganar ese 10% o un poco menos de mejora, puesto que ellos propusieron el concurso, tienen un problema y están estancados, pero ¿y empresas más pequeñas? ¿es suficiente el porcentaje de mejora como para implementarlo?
+</div>
